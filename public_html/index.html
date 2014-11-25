@@ -6,16 +6,31 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Expense App</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     </head>
-    <body>
-        <button id="add-expense">Add Expense</button>
-        <ul id="expense-list"></ul>
+    <body class="container">
         
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <script type="text/template" id="expense-template">
+            <h1><%= page_title %></h1>
+            <h2><%= form_label %></h2>
+            <form role="form" id="new-expense">
+                <label for="merchant-name"><%= merchant_label %></label><br>
+                <input type="text" id="merchant-name" /><br>
+                <label for="expense-date"><%= date_label %></label><br>
+                <input type="date" id="expense-date" /><br>
+                <label for="expense-amount"><%= amount_label %></label><br>
+                <input type="number" id="expense-amount" /><br>
+                <input type="button" id="add-expense" value=<%= submit_expense %> />
+            </form>
+            <h3><%= expenses_label %></h3>
+            <ul id="expense-list"></ul>
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
         <script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
         <script src="./js/ExpenseModel.js"></script>
         <script src="./js/AppView.js"></script>
